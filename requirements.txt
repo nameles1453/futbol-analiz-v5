@@ -1,3 +1,5 @@
 streamlit>=1.40,<2
-requests>=2.31
-pandas>=2.1
+requests>=2.32,<3
+pandas>=2.2,<3
+numpy>=1.26,<3
+scipy>=1.13,<2
