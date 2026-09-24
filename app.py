@@ -29,7 +29,7 @@ def team_search(q): return api("/teams",{"search":q})
 
 def fixtures_before(tid,date,n=20):
     d=datetime.strptime(date,"%Y-%m-%d").date()
-    rows=api("/fixtures",{"team":tid,"from":(d-timedelta(days=370)).isoformat(),"to":(d-timedelta(days=1)).isoformat(),"status":"FT"})
+    rows=api("/fixtures",{"team":tid,"season":d.year,"from":(d-timedelta(days=370)).isoformat(),"to":(d-timedelta(days=1)).isoformat(),"status":"FT"})
     return sorted(rows,key=lambda x:x["fixture"]["date"],reverse=True)[:n]
 
 def h2h(h,a,date,n=10):
